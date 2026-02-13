@@ -1,0 +1,127 @@
+{
+  "identity": {
+    "role": "E1 - The Anti-AI Designer",
+    "mission": "Create a visceral, nostalgic, and hyper-pink Y2K experience for Anna. Break modern flat design rules. Embrace chaos, shine, and emotion.",
+    "aesthetics": {
+      "theme": "Cyber-Heart Y2K",
+      "visuals": [
+        "Metallic/Chrome textures",
+        "Neon Pink & Holographic gradients",
+        "Pixelated & Bubbly typography",
+        "Scanlines & Glitch effects",
+        "Windows 95/2000 style UI elements with a pink twist",
+        "Floating 3D-ish elements"
+      ],
+      "vibe": "Mean Girls x The Matrix x Tamagotchi"
+    }
+  },
+  "typography": {
+    "primary_font": "Orbitron",
+    "secondary_font": "Fredoka",
+    "pixel_font": "VT323",
+    "instructions": "Use Orbitron for futuristic headers, Fredoka for bubbly/friendly body text, and VT323 for retro data/terminal elements. Import from Google Fonts."
+  },
+  "colors": {
+    "palette": {
+      "deep_void": "#050005",
+      "hot_pink": "#FF007F",
+      "bubblegum": "#FF69B4",
+      "neon_cyan": "#00FFFF",
+      "metallic_silver": "#C0C0C0",
+      "acid_green": "#CCFF00",
+      "electric_purple": "#BD00FF",
+      "white_glow": "#FFFFFF"
+    },
+    "gradients": {
+      "cyber_heart": "linear-gradient(135deg, #FF007F 0%, #BD00FF 100%)",
+      "holographic": "linear-gradient(45deg, #FF007F, #00FFFF, #CCFF00, #FF007F)",
+      "chrome": "linear-gradient(180deg, #F0F0F0 0%, #C0C0C0 49%, #808080 50%, #C0C0C0 100%)"
+    },
+    "background": "#050005"
+  },
+  "layout_strategy": {
+    "type": "Chaotic Pop-up",
+    "grid": "Absolute/scattered positioning mixed with centered modals",
+    "spacing": "Irregular. Overlapping elements are encouraged.",
+    "container_style": "Retro OS Window (Pink Borders, Title Bars)"
+  },
+  "components": {
+    "LandingPage": {
+      "path": "/app/frontend/src/pages/LandingPage.js",
+      "description": "A high-energy entry point. User must 'charge' the heart to enter.",
+      "features": [
+        "Central pulsating neon heart",
+        "Clicking the heart spawns floating mini-hearts (Framer Motion)",
+        "Progress bar fills up with clicks",
+        "'Enter' button unlocks when charged",
+        "Background: Starfield or scrolling binary code in pink"
+      ]
+    },
+    "CountdownCarousel": {
+      "path": "/app/frontend/src/components/CountdownCarousel.js",
+      "description": "The core journey. Slides 10 down to 1.",
+      "structure": [
+        "10: Things I Love About You (List view)",
+        "9: Achievements (Trophy case view)",
+        "8: Places To Go (Map/Postcard view)",
+        "7: Dishes To Try (Menu view)",
+        "6: Songs That Remind Me of You (Winamp playlist view)",
+        "5: Inside Jokes (Chat log view)",
+        "4: Promises (Contract/Certificate view)",
+        "3: Dates to Remember (Calendar view)",
+        "2: Reasons We Match (Compatibility chart)",
+        "1: One Question... (Transition to reveal)"
+      ],
+      "navigation": "Previous/Next buttons styled like retro arrows or game controllers."
+    },
+    "ProposalReveal": {
+      "path": "/app/frontend/src/components/ProposalReveal.js",
+      "description": "The climax. 'Anna, will you be my Valentine?'",
+      "interactions": [
+        "Massive 'YES' button (Blinking, shaking)",
+        "Running 'NO' button (Runs away from cursor)",
+        "Confetti/Fireworks on click",
+        "Music player auto-starts (optional)"
+      ]
+    },
+    "RetroWindow": {
+      "path": "/app/frontend/src/components/ui/RetroWindow.js",
+      "description": "Reusable container component.",
+      "props": ["title", "onClose", "children", "isDraggable"],
+      "style": "Pink border, gradient title bar with 'X' button, scanline content background."
+    }
+  },
+  "assets": {
+    "icons": "Lucide React (Heart, Star, Music, MapPin, Trophy, Utensils)",
+    "textures": {
+      "scanlines": "CSS repeating-linear-gradient",
+      "grid": "CSS radial-gradient grid pattern",
+      "noise": "CSS url('data:image/svg...') or similar noise generator"
+    },
+    "sounds": "Optional: Pop sounds on click (use HTML5 Audio if assets available, otherwise skip)"
+  },
+  "motion": {
+    "library": "framer-motion",
+    "presets": {
+      "hover": { "scale": 1.1, "rotate": 3 },
+      "tap": { "scale": 0.9 },
+      "entrance": { "initial": { "scale": 0, "rotate": -10 }, "animate": { "scale": 1, "rotate": 0 } },
+      "float": { "y": [0, -10, 0], "transition": { "repeat": "Infinity", "duration": 2 } }
+    }
+  },
+  "universal_guidelines": [
+    "Do not use default Shadcn styles. Override everything with custom CSS/Tailwind.",
+    "Use 'cursor-wait' or custom crosshair cursors for that retro feel.",
+    "Add a 'Marquee' at the bottom scrolling 'HAPPY VALENTINES DAY ANNA <3'.",
+    "Ensure the 'No' button is practically unclickable in the proposal.",
+    "Use data-testid for all interactive elements."
+  ],
+  "instructions_to_main_agent": [
+    "Install 'framer-motion', 'lucide-react', 'canvas-confetti' (for the Yes moment).",
+    "Create the 'RetroWindow' component first as it wraps everything.",
+    "Implement the 'HeartBlaster' logic in LandingPage.",
+    "Build the 10 slides for CountdownCarousel with unique layouts for each.",
+    "Use inline CSS or Tailwind arbitrary values for the specific gradients and shadows.",
+    "Ensure responsive design (mobile friendly) - stack the retro windows vertically on mobile."
+  ]
+}

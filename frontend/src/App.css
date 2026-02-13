@@ -1,34 +1,250 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Y2K Valentine App Styles */
+
+.App {
+  min-height: 100vh;
+  background: #050005;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Star field background */
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s ease-in-out infinite;
 }
 
-.App-link {
-    color: #61dafb;
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Floating hearts */
+.floating-heart {
+  position: absolute;
+  pointer-events: none;
+  animation: float-up 2s ease-out forwards;
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) scale(0.5);
+  }
+}
+
+/* Retro window styling */
+.retro-window {
+  background: rgba(5, 0, 5, 0.9);
+  border: 3px solid #FF007F;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 10px #FF007F,
+    0 0 20px rgba(255, 0, 127, 0.5),
+    inset 0 0 30px rgba(255, 0, 127, 0.1);
+  overflow: hidden;
+}
+
+.retro-window-header {
+  background: linear-gradient(90deg, #FF007F, #BD00FF);
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.retro-window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.retro-window-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.retro-window-btn.close { background: #FF5F56; }
+.retro-window-btn.minimize { background: #FFBD2E; }
+.retro-window-btn.maximize { background: #27C93F; }
+
+.retro-window-content {
+  padding: 20px;
+  position: relative;
+}
+
+/* Main heart button */
+.main-heart {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 20px #FF007F) drop-shadow(0 0 40px #FF69B4);
+  transition: transform 0.1s;
+}
+
+.main-heart:hover {
+  transform: scale(1.05);
+}
+
+.main-heart:active {
+  transform: scale(0.95);
+}
+
+/* Navigation arrows */
+.nav-arrow {
+  background: linear-gradient(135deg, #FF007F, #BD00FF);
+  border: 2px solid #00FFFF;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #FF007F;
+}
+
+.nav-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Countdown number display */
+.countdown-number {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 120px;
+  font-weight: 900;
+  background: linear-gradient(180deg, #FF007F 0%, #BD00FF 50%, #00FFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.8));
+}
+
+/* Yes/No buttons */
+.yes-button {
+  background: linear-gradient(135deg, #27C93F, #00FF7F);
+  border: 3px solid #CCFF00;
+  color: white;
+  padding: 20px 60px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+  animation: pulse-heart 1s ease-in-out infinite, shake 0.5s ease-in-out infinite;
+  box-shadow: 0 0 30px #27C93F, 0 0 60px rgba(39, 201, 63, 0.5);
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.yes-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px #27C93F, 0 0 100px rgba(39, 201, 63, 0.7);
+}
+
+.no-button {
+  background: linear-gradient(135deg, #FF5F56, #FF007F);
+  border: 2px solid #FF69B4;
+  color: white;
+  padding: 10px 30px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  position: absolute;
+  transition: all 0.1s;
+}
+
+/* Slide specific styles */
+.slide-container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: rgba(255, 0, 127, 0.1);
+  border: 1px solid rgba(255, 0, 127, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.list-item:hover {
+  transform: translateX(10px);
+  background: rgba(255, 0, 127, 0.2);
+}
+
+.list-number {
+  background: linear-gradient(135deg, #FF007F, #BD00FF);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .countdown-number {
+    font-size: 80px;
+  }
+  
+  .main-heart {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .yes-button {
+    padding: 15px 40px;
+    font-size: 24px;
+  }
 }

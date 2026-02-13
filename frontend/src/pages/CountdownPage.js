@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Heart, Trophy, MapPin, Utensils, Music, MessageCircle, FileText, Calendar, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Heart, Trophy, MapPin, Utensils, Music, Brain, FileText, Calendar, Sparkles } from 'lucide-react';
 import RetroWindow from '../components/RetroWindow';
+
+// ITEMS CAN BE STRINGS OR OBJECTS WITH { text, image } 
+// Example: "Simple text" OR { text: "Item with image", image: "https://your-image-url.jpg" }
 
 const COUNTDOWN_DATA = [
   {
@@ -41,54 +44,58 @@ const COUNTDOWN_DATA = [
     number: 8,
     title: "Places We Should Go Together",
     icon: MapPin,
+    // ADD YOUR IMAGES HERE - use { text: "...", image: "URL" } format
     items: [
-      "Iceland trip",
-      "A beach at the South of France",
-      "Paris - the city of love",
-      "A road trip to the pacific northwest",
-      "Uptown New York to see the foliage",
-      "The cabin in Canada",
-      "A stargazing trip in the desert",
-      "Anywhere, as long as I'm with you"
+      { text: "Iceland trip", image: "" },
+      { text: "A beach at the South of France", image: "" },
+      { text: "Paris - the city of love", image: "" },
+      { text: "A road trip to the pacific northwest", image: "" },
+      { text: "Uptown New York to see the foliage", image: "" },
+      { text: "The cabin in Canada", image: "" },
+      { text: "A stargazing trip in the desert", image: "" },
+      { text: "Anywhere, as long as I'm with you", image: "" }
     ]
   },
   {
     number: 7,
     title: "Dishes We Should Try to Cook Together",
     icon: Utensils,
+    // ADD YOUR IMAGES HERE
     items: [
-      "Homemade pasta from scratch",
-      "STEAK",
-      "Brussel Sprouts because they're your favorite",
-      "The rattatouille one",
-      "A snack with lots of MATCHA",
-      "Homemade acocado toast",
-      "Fried Chicken"
+      { text: "Homemade pasta from scratch", image: "" },
+      { text: "STEAK", image: "" },
+      { text: "Brussel Sprouts because they're your favorite", image: "" },
+      { text: "The rattatouille one", image: "" },
+      { text: "A snack with lots of MATCHA", image: "" },
+      { text: "Homemade acocado toast", image: "" },
+      { text: "Fried Chicken", image: "" }
     ]
   },
   {
     number: 6,
     title: "Songs That Remind Me of You",
     icon: Music,
+    // ADD YOUR IMAGES HERE
     items: [
-      "Invisibile String - TS",
-      "Buses Replace Trains - Matt Maltese",
-      "Starry Eyes - Cigarettes After SEX",
-      "About You - The 1975",
-      "Kiss of Life - Sade",
-      "No Other Way - Jack Johnson"
+      { text: "Invisibile String - TS", image: "" },
+      { text: "Buses Replace Trains - Matt Maltese", image: "" },
+      { text: "Starry Eyes - Cigarettes After SEX", image: "" },
+      { text: "About You - The 1975", image: "" },
+      { text: "Kiss of Life - Sade", image: "" },
+      { text: "No Other Way - Jack Johnson", image: "" }
     ]
   },
   {
     number: 5,
     title: "Moments I replay in my head",
-    icon: ThoughtBubble,
+    icon: Brain,
+    // ADD YOUR IMAGES HERE
     items: [
-      "When I took photos of you at Prom",
-      "LA",
-      "That first hug after I got off the flight in NYC",
-      "Driving down Newport Coast Drive to our playlist",
-      "Everytime we hug"
+      { text: "When I took photos of you at Prom", image: "" },
+      { text: "LA", image: "" },
+      { text: "That first hug after I got off the flight in NYC", image: "" },
+      { text: "Driving down Newport Coast Drive to our playlist", image: "" },
+      { text: "Everytime we hug", image: "" }
     ]
   },
   {
@@ -116,9 +123,10 @@ const COUNTDOWN_DATA = [
     number: 2,
     title: "2 people",
     icon: Sparkles,
+    // ADD YOUR IMAGES HERE
     items: [
-      "You",
-      "Me"
+      { text: "You", image: "" },
+      { text: "Me", image: "" }
     ]
   },
   {
@@ -149,6 +157,10 @@ export const CountdownPage = ({ onComplete }) => {
       setCurrentSlide(prev => prev - 1);
     }
   };
+
+  // Helper to get text from item (handles both string and object)
+  const getItemText = (item) => typeof item === 'string' ? item : item.text;
+  const getItemImage = (item) => typeof item === 'object' ? item.image : null;
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 pb-20" data-testid="countdown-page">
@@ -231,18 +243,43 @@ export const CountdownPage = ({ onComplete }) => {
 
                 {/* Items List */}
                 <div className="w-full max-w-md">
-                  {slideData.items.map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      className="list-item"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.1 }}
-                    >
-                      <span className="list-number">{idx + 1}</span>
-                      <span>{item}</span>
-                    </motion.div>
-                  ))}
+                  {slideData.items.map((item, idx) => {
+                    const itemImage = getItemImage(item);
+                    const itemText = getItemText(item);
+                    
+                    return (
+                      <motion.div
+                        key={idx}
+                        className="list-item"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                        style={{ 
+                          flexDirection: itemImage ? 'column' : 'row',
+                          alignItems: itemImage ? 'flex-start' : 'center'
+                        }}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="list-number">{idx + 1}</span>
+                          <span>{itemText}</span>
+                        </div>
+                        {itemImage && (
+                          <motion.img
+                            src={itemImage}
+                            alt={itemText}
+                            className="mt-3 rounded-lg w-full max-h-40 object-cover"
+                            style={{ 
+                              border: '2px solid #FF007F',
+                              boxShadow: '0 0 10px rgba(255, 0, 127, 0.3)'
+                            }}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: idx * 0.1 + 0.2 }}
+                          />
+                        )}
+                      </motion.div>
+                    );
+                  })}
                 </div>
 
                 {/* Next hint for last slide */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '@/App.css';
+import './App.css';
 import StarField from './components/StarField';
 import Marquee from './components/Marquee';
 import LandingPage from './pages/LandingPage';

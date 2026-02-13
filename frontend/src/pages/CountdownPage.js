@@ -3,8 +3,43 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Heart, Trophy, MapPin, Utensils, Music, Brain, FileText, Calendar, Sparkles } from 'lucide-react';
 import RetroWindow from '../components/RetroWindow';
 
-// ITEMS CAN BE STRINGS OR OBJECTS WITH { text, image } 
-// Example: "Simple text" OR { text: "Item with image", image: "https://your-image-url.jpg" }
+// Slide 8 — Places
+import iceland from '../images/iceland.jpg';
+import southFrance from '../images/south-france.jpg';
+import paris from '../images/paris.jpg';
+import pacificNorthwest from '../images/pacific-northwest.jpg';
+import uptownNyc from '../images/uptown-nyc.jpg';
+import cabinCanada from '../images/cabin-canada.jpg';
+import stargazingDesert from '../images/stargazing-desert.jpg';
+import anywhere from '../images/anywhere.jpg';
+
+// Slide 7 — Dishes
+import pasta from '../images/pasta.jpg';
+import steak from '../images/steak.jpg';
+import brusselSprouts from '../images/brussel-sprouts.jpg';
+import ratatouille from '../images/ratatouille.jpg';
+import matcha from '../images/matcha.jpg';
+import avocadoToast from '../images/avocado-toast.jpg';
+import friedChicken from '../images/fried-chicken.jpg';
+
+// Slide 6 — Songs
+import invisibleString from '../images/invisible-string.jpg';
+import busesReplaceTrains from '../images/buses-replace-trains.jpg';
+import starryEyes from '../images/starry-eyes.jpg';
+import aboutYou from '../images/about-you.jpg';
+import kissOfLife from '../images/kiss-of-life.jpg';
+import noOtherWay from '../images/no-other-way.jpg';
+
+// Slide 5 — Moments
+import prom from '../images/prom.jpeg';
+import la from '../images/la.jpg';
+import firstHugNyc from '../images/first-hug-nyc.jpg';
+import newportCoast from '../images/newport-coast.jpg';
+import hugging from '../images/hugging.jpg';
+
+// Slide 2 — 2 People
+import you from '../images/you.jpg';
+import me from '../images/me.jpg';
 
 const COUNTDOWN_DATA = [
   {
@@ -32,7 +67,7 @@ const COUNTDOWN_DATA = [
       "Graduating with me",
       "Getting into BARNARD COLLEGE at Columbia University in NEW YORK CITY",
       "Launching your fashion brand",
-      "Surviving your "Nights Out"",
+      "Surviving your \"Nights Out\"",
       "Curating your instagram feed",
       "Making supportive friends",
       "Getting into clubs like HOOT Mag and CUIIN",
@@ -44,58 +79,54 @@ const COUNTDOWN_DATA = [
     number: 8,
     title: "Places We Should Go Together",
     icon: MapPin,
-    // ADD YOUR IMAGES HERE - use { text: "...", image: "URL" } format
     items: [
-      { text: "Iceland trip", image: "" },
-      { text: "A beach at the South of France", image: "" },
-      { text: "Paris - the city of love", image: "" },
-      { text: "A road trip to the pacific northwest", image: "" },
-      { text: "Uptown New York to see the foliage", image: "" },
-      { text: "The cabin in Canada", image: "" },
-      { text: "A stargazing trip in the desert", image: "" },
-      { text: "Anywhere, as long as I'm with you", image: "" }
+      { text: "Iceland trip", image: iceland },
+      { text: "A beach at the South of France", image: southFrance },
+      { text: "Paris - the city of love", image: paris },
+      { text: "A road trip to the pacific northwest", image: pacificNorthwest },
+      { text: "Uptown New York to see the foliage", image: uptownNyc },
+      { text: "The cabin in Canada", image: cabinCanada },
+      { text: "A stargazing trip in the desert", image: stargazingDesert },
+      { text: "Anywhere, as long as I'm with you", image: anywhere }
     ]
   },
   {
     number: 7,
     title: "Dishes We Should Try to Cook Together",
     icon: Utensils,
-    // ADD YOUR IMAGES HERE
     items: [
-      { text: "Homemade pasta from scratch", image: "" },
-      { text: "STEAK", image: "" },
-      { text: "Brussel Sprouts because they're your favorite", image: "" },
-      { text: "The rattatouille one", image: "" },
-      { text: "A snack with lots of MATCHA", image: "" },
-      { text: "Homemade acocado toast", image: "" },
-      { text: "Fried Chicken", image: "" }
+      { text: "Homemade pasta from scratch", image: pasta },
+      { text: "STEAK", image: steak },
+      { text: "Brussel Sprouts because they're your favorite", image: brusselSprouts },
+      { text: "The rattatouille one", image: ratatouille },
+      { text: "A snack with lots of MATCHA", image: matcha },
+      { text: "Homemade acocado toast", image: avocadoToast },
+      { text: "Fried Chicken", image: friedChicken }
     ]
   },
   {
     number: 6,
     title: "Songs That Remind Me of You",
     icon: Music,
-    // ADD YOUR IMAGES HERE
     items: [
-      { text: "Invisibile String - TS", image: "" },
-      { text: "Buses Replace Trains - Matt Maltese", image: "" },
-      { text: "Starry Eyes - Cigarettes After SEX", image: "" },
-      { text: "About You - The 1975", image: "" },
-      { text: "Kiss of Life - Sade", image: "" },
-      { text: "No Other Way - Jack Johnson", image: "" }
+      { text: "Invisibile String - TS", image: invisibleString },
+      { text: "Buses Replace Trains - Matt Maltese", image: busesReplaceTrains },
+      { text: "Starry Eyes - Cigarettes After SEX", image: starryEyes },
+      { text: "About You - The 1975", image: aboutYou },
+      { text: "Kiss of Life - Sade", image: kissOfLife },
+      { text: "No Other Way - Jack Johnson", image: noOtherWay }
     ]
   },
   {
     number: 5,
     title: "Moments I replay in my head",
     icon: Brain,
-    // ADD YOUR IMAGES HERE
     items: [
-      { text: "When I took photos of you at Prom", image: "" },
-      { text: "LA", image: "" },
-      { text: "That first hug after I got off the flight in NYC", image: "" },
-      { text: "Driving down Newport Coast Drive to our playlist", image: "" },
-      { text: "Everytime we hug", image: "" }
+      { text: "When I took photos of you at Prom", image: prom },
+      { text: "LA", image: la },
+      { text: "That first hug after I got off the flight in NYC", image: firstHugNyc },
+      { text: "Driving down Newport Coast Drive to our playlist", image: newportCoast },
+      { text: "Everytime we hug", image: hugging }
     ]
   },
   {
@@ -123,10 +154,9 @@ const COUNTDOWN_DATA = [
     number: 2,
     title: "2 people",
     icon: Sparkles,
-    // ADD YOUR IMAGES HERE
     items: [
-      { text: "You", image: "" },
-      { text: "Me", image: "" }
+      { text: "You", image: you },
+      { text: "Me", image: me }
     ]
   },
   {
@@ -267,8 +297,10 @@ export const CountdownPage = ({ onComplete }) => {
                           <motion.img
                             src={itemImage}
                             alt={itemText}
-                            className="mt-3 rounded-lg w-full max-h-40 object-cover"
-                            style={{ 
+                            className="mt-3 rounded-lg object-cover"
+                            style={{
+                              width: '100%',
+                              height: '200px',
                               border: '2px solid #FF007F',
                               boxShadow: '0 0 10px rgba(255, 0, 127, 0.3)'
                             }}

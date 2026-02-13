@@ -209,6 +209,7 @@ export const CountdownPage = ({ onComplete }) => {
                 {/* Big Number */}
                 <motion.div
                   className="countdown-number"
+                  key={`number-${slideData.number}`}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', stiffness: 200 }}

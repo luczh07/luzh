@@ -162,6 +162,12 @@
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 0 0 30px #27C93F, 0 0 60px rgba(39, 201, 63, 0.5);
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 30px #27C93F, 0 0 60px rgba(39, 201, 63, 0.5); }
+  50% { box-shadow: 0 0 50px #27C93F, 0 0 100px rgba(39, 201, 63, 0.7); }
 }
 
 .yes-button:hover {

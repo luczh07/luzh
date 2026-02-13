@@ -9,16 +9,16 @@ const COUNTDOWN_DATA = [
     title: "Things I Love About You",
     icon: Heart,
     items: [
-      "Your infectious laugh that lights up every room",
-      "The way you scrunch your nose when you're thinking",
-      "Your unwavering kindness to everyone you meet",
-      "How passionate you get about your interests",
+      "Your infectious laugh that lights up the room",
+      "The way you scrunch your eyebrows when you're thinking",
+      "Your kindness to everyone you meet",
+      "How passionate you get about fasion",
       "Your beautiful smile that makes my day",
       "The way you always know how to cheer me up",
       "Your incredible sense of humor",
-      "How you make even ordinary moments special",
-      "Your strength and resilience through challenges",
-      "Simply being you - my favorite person"
+      "How you start singing random songs at random times",
+      "Your desire to make things very over the top",
+      "Simply being you - you are my favorite person"
     ]
   },
   {
@@ -26,15 +26,15 @@ const COUNTDOWN_DATA = [
     title: "Accomplishments I'm Proud of You For",
     icon: Trophy,
     items: [
-      "Graduating and achieving your dreams",
-      "Landing your amazing job",
-      "Standing up for what you believe in",
-      "Learning that new skill you worked so hard on",
-      "Being there for your friends when they needed you",
-      "Overcoming that challenge that seemed impossible",
-      "Creating something beautiful with your talents",
-      "Making a positive difference in someone's life",
-      "Never giving up even when things got tough"
+      "Graduating with me",
+      "Getting into BARNARD COLLEGE at Columbia University in NEW YORK CITY",
+      "Launching your fashion brand",
+      "Surviving your "Nights Out"",
+      "Curating your instagram feed",
+      "Making supportive friends",
+      "Getting into clubs like HOOT Mag and CUIIN",
+      "Not getting lost in the city ",
+      "2/14/2025 fashion show"
     ]
   },
   {
@@ -42,28 +42,28 @@ const COUNTDOWN_DATA = [
     title: "Places We Should Go Together",
     icon: MapPin,
     items: [
-      "A cozy cabin in the mountains",
-      "That beach resort we've been dreaming about",
+      "Iceland trip",
+      "A beach at the South of France",
       "Paris - the city of love",
-      "A road trip with no destination",
-      "That cute town with the amazing scenery",
-      "Japan to see the cherry blossoms",
+      "A road trip to the pacific northwest",
+      "Uptown New York to see the foliage",
+      "The cabin in Canada",
       "A stargazing trip in the desert",
       "Anywhere, as long as I'm with you"
     ]
   },
   {
     number: 7,
-    title: "Dishes We Should Try Together",
+    title: "Dishes We Should Try to Cook Together",
     icon: Utensils,
     items: [
       "Homemade pasta from scratch",
-      "That fancy restaurant we keep passing by",
-      "Street food tour in a new city",
-      "Cooking class for a cuisine we've never tried",
-      "The most expensive dessert on the menu",
-      "A full breakfast in bed spread",
-      "That viral recipe everyone's talking about"
+      "STEAK",
+      "Brussel Sprouts because they're your favorite",
+      "The rattatouille one",
+      "A snack with lots of MATCHA",
+      "Homemade acocado toast",
+      "Fried Chicken"
     ]
   },
   {
@@ -71,24 +71,24 @@ const COUNTDOWN_DATA = [
     title: "Songs That Remind Me of You",
     icon: Music,
     items: [
-      "Our song that always makes us dance",
-      "That one we heard on our first date",
-      "The song playing during our best memory",
-      "Your favorite that you sing in the car",
-      "The one we both know all the words to",
-      "That song that perfectly describes my feelings"
+      "Invisibile String - TS",
+      "Buses Replace Trains - Matt Maltese",
+      "Starry Eyes - Cigarettes After SEX",
+      "About You - The 1975",
+      "Kiss of Life - Sade",
+      "No Other Way - Jack Johnson"
     ]
   },
   {
     number: 5,
-    title: "Inside Jokes Only We Understand",
-    icon: MessageCircle,
+    title: "Moments I replay in my head",
+    icon: ThoughtBubble,
     items: [
-      "That thing that happened at dinner that one time",
-      "The voice we do when we're being silly",
-      "That nickname only I'm allowed to call you",
-      "The look we give each other that says everything",
-      "That movie quote we overuse constantly"
+      "When I took photos of you at Prom",
+      "LA",
+      "That first hug after I got off the flight in NYC",
+      "Driving down Newport Coast Drive to our playlist",
+      "Everytime we hug"
     ]
   },
   {
@@ -107,18 +107,18 @@ const COUNTDOWN_DATA = [
     title: "Dates to Remember",
     icon: Calendar,
     items: [
-      "The day we first met",
-      "Our first adventure together",
+      "The Date I asked you to be my GF",
+      "4/6",
       "Today - the day I asked THE question"
     ]
   },
   {
     number: 2,
-    title: "Reasons We're Perfect Together",
+    title: "2 people",
     icon: Sparkles,
     items: [
-      "We make each other better people",
-      "Our weirdness is perfectly compatible"
+      "You",
+      "Me"
     ]
   },
   {

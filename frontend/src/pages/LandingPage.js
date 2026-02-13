@@ -61,10 +61,11 @@ export const LandingPage = ({ onEnter }) => {
 
           {/* Main Heart Button */}
           <motion.div
-            className="main-heart pulse-heart cursor-pointer"
+            className="main-heart cursor-pointer"
             onClick={handleHeartClick}
             whileTap={{ scale: 0.9 }}
             data-testid="main-heart-button"
+            style={{ animation: 'none' }}
           >
             <Heart
               size={200}

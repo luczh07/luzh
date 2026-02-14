@@ -53,7 +53,7 @@ const COUNTDOWN_DATA = [
       "How passionate you get about fasion",
       "Your beautiful smile that makes my day",
       "The way you always know how to cheer me up",
-      "Your incredible sense of humor",
+      "Your goofy sense of humor",
       "How you start singing random songs at random times",
       "Your desire to make things very over the top",
       "Simply being you - you are my favorite person"
@@ -136,7 +136,7 @@ const COUNTDOWN_DATA = [
     items: [
       "To always make you laugh (even with bad jokes)",
       "To be your biggest supporter in everything",
-      "To hold your hand through the hard times",
+      "To be there for you through the hard times",
       "To celebrate every small victory with you"
     ]
   },

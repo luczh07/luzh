@@ -297,13 +297,7 @@ export const CountdownPage = ({ onComplete }) => {
                           <motion.img
                             src={itemImage}
                             alt={itemText}
-                            className="mt-3 rounded-lg object-cover"
-                            style={{
-                              width: '100%',
-                              height: '200px',
-                              border: '2px solid #FF007F',
-                              boxShadow: '0 0 10px rgba(255, 0, 127, 0.3)'
-                            }}
+                            className="mt-3 countdown-image"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: idx * 0.1 + 0.2 }}

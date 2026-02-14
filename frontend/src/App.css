@@ -232,6 +232,23 @@
   font-weight: 700;
 }
 
+.countdown-image {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #FF007F;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+  .countdown-image {
+    height: 320px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .countdown-number {
